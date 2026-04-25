@@ -1,0 +1,131 @@
+
+
+        body{
+            background-color: #f9f9f9;
+        }
+        .credit_card_page{
+            background-color: #FFFFFF;
+            padding:10px;
+            max-width: 700px;
+            margin: 0 auto;
+            margin-top: 20px;
+        } 
+
+        .credit_card_page h3{
+            margin-bottom: 25px;
+
+        }
+
+        .credit_card_page_head{
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        label{
+            display: block;
+            font-weight: 500;
+            margin-bottom: 6px;
+            font-size: 18px;
+        }
+        form{
+            user-select: none;
+        }
+
+        input{
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            background-color: #fff;
+            font-size: 14px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+        .cardExpiry{
+            display: flex;
+            gap:50px;
+        }
+        .cardExpiry>div{
+            flex:1;
+        }
+
+        .acknowledgement{
+            font-size: 16px;
+            margin-top: 10px;
+            margin-bottom: 15px;
+            color:#555;
+        }
+        .master_visa_img img {
+            width: 60px;   
+            height: auto;   
+        }
+        .master_visa_img #master_visa_img{
+            width: 30px ;
+            height:30px ;
+            margin-right: 20px;
+        }
+        .error-message{
+            display:none;
+            color:#ef4444;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .cancenl_submit_button{
+            display: flex;
+            justify-content: flex-end;
+            gap:20px;
+        }
+
+        .cancenl_submit_button button{
+            padding: 10px 30px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        #cancelBtn{
+            background-color: white;
+            border:1px solid #ddd;
+        }
+        #cancelBtn:hover{
+            background-color: #F5F5F5;
+        }
+        #submitBtn{
+            background-color: #0077cc;
+            color: white;
+            border:none;
+        }
+        #submitBtn:hover{
+            background-color: #0056b3;
+        }
+
+        /* Responsive Design */
+        /* tablet/ipad design */
+        @media (max-width: 768px) {
+        .cancenl_submit_button {
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .cancenl_submit_button button {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            }
+        }
+
+        /* Mobile Phone Design */
+        @media (max-width: 480px) {
+        .cancenl_submit_button {
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .cancenl_submit_button button {
+            width: 100%;
+            padding: 10px;
+            }
+        }
+
+
+ 

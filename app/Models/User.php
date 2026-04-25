@@ -43,4 +43,9 @@ class User extends Authenticatable
     {
         return $this->hasOne(Cart::class)->latestOfMany();
     }
+
+    public function checkouts()
+    {
+    return $this->hasMany(Checkout::class);
+    }
 }

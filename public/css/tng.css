@@ -1,0 +1,111 @@
+
+        body{
+            background-color: #f9f9f9;
+        }
+        .tng_page{
+            max-width: 700px;
+            margin: 0px auto;
+            margin-top: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        } 
+
+        .tng_heading{
+            background: linear-gradient(90deg, #3a8cff, #7b5bff);
+            color:white;
+            padding:20px;
+            position: relative;
+            
+        }
+        .tng_heading h3{
+            font-size: 18px;
+        }
+        .tng_heading span{
+            font-size: 40px;
+            font-weight: 700;
+        }
+        .tng_img{
+            user-select: none;
+            margin-left: -40px;
+        }
+        .tng_img img{
+            width:160px;
+            height:90px;
+            margin-top: 20px;
+        }
+        label{
+            display:block;
+            font-size: 18px;
+            padding: 10px;
+        }
+        .login_Input{
+            display:flex;
+            gap:10px;
+            margin-top:10px;
+            margin-bottom: 10px;
+            padding: 10px;
+            align-items: flex-start;
+        }
+
+        #country{
+            padding:14px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        .phoneNumber{
+            display:flex;
+            flex:1;
+            flex-direction: column;
+        }
+        .phoneNumber input{
+            padding:14px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top:4px;
+            display: none;
+        }   
+        #pinError{
+            margin-left: 30px;
+        } 
+        .pin{
+            display: flex;
+            justify-content: space-around;
+            gap:10px;
+            margin:10px 0 20px;
+            max-width: 700px;
+            user-select: none;
+        }
+        .pin input{
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            font-size: 18px;
+            border-radius: 6px;
+            border: 1px solid #312e2eff;
+        }
+        .logIn{
+            padding:20px;
+            padding-top: 80px;
+        }
+        .logIn_Btn{
+            width: 100%;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            background-color: #3a8cff;
+            color:white;
+            font-size: 18px;
+
+          
+        }
+        .bottomBackground{
+            background-color: #fff;
+            height: 100px;
+            width: 100%;
+        }
+        

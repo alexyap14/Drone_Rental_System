@@ -68,13 +68,27 @@ Route::middleware('auth')->group(function () {
     Route::post('/cart/add', [CartController::class, 'add'])->name('cart.add');
     Route::delete('/cart/{cartItem}', [CartController::class, 'remove'])->name('cart.remove');
     Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
+    Route::get('/checkout/card', function () {
+        return view('checkout.card');
+    })->name('checkout.card');
+
+    Route::get('/checkout/tng', function () {
+        return view('checkout.tng');
+    })->name('checkout.tng');
+
+    Route::get('/checkout/done', [CheckoutController::class, 'done'])->name('checkout.done');
+
+});
+
+//Something doesn't make any sense
+Route::get('/easteregg/gugugaga', function () {
+    return view('easteregg.gugugaga');
+});
+Route::get('/easteregg/senpai', function () {
+    return view('easteregg.senpai');
 });
 
 
-
-Route::get('/history', function () {
-    return view('history');
-})->name('history.index');
 Route::view('/tos', 'privacy_term_of_service.tos')->name('tos');
 Route::view('/privacy', 'privacy_term_of_service.privacy')->name('privacy');
 
@@ -82,5 +96,4 @@ Route::get('password/reset', [ForgotPasswordController::class, 'showLinkRequestF
 Route::post('password/email', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
 Route::get('password/reset/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
 Route::post('password/reset', [ResetPasswordController::class, 'reset'])->name('password.update');
-
 

@@ -1,0 +1,341 @@
+
+        /* Default design (desktop/laptop) */
+        body{
+            background-color: #f9f9f9;
+        }
+        body h3{
+            font-size: 22px;
+        }
+        #CheckOutButton{
+            border-radius: 10px;
+            width: 160px;
+            height:30px;
+            margin: 20px;
+            font-size: 16px;
+            background-color: white; 
+            margin-left: 40px;   
+            }
+
+        .deliveryContainer{
+            background-color: #FFFFFF;
+            padding:10px;
+            margin-left:40px;
+            margin-right:40px;
+            margin-bottom:20px;
+
+        }    
+
+        .deliveryAddress{
+            display:flex;
+        }   
+
+        #map_logo{
+            width:35px;
+            height:35px;
+            margin:10px;
+            margin-top: 15px;
+        } 
+
+        .UserDetail{
+            display:flex;
+            justify-content: space-between;
+            margin-left:20px;
+            margin-top:20px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        
+        .changeProfile a{
+            text-decoration: none;
+            color: #0077cc;
+        }
+
+        .CheckOutContainer{
+            background-color: #FFFFFF;
+            padding:10px;
+            margin-left:40px;
+            margin-right:40px;
+            margin-bottom:20px;
+            display: block;
+            overflow: hidden; 
+        }
+
+        .OrderSummary {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 20px;
+
+            background-color: #f9f9f9;  
+            padding: 15px;
+            margin-top: 15px;
+
+            font-size: 18px; 
+            border-bottom: 1px solid black;
+        }
+        .OrderSummaryHead{
+            display:flex;
+            justify-content: space-between;   
+            align-items: center;
+            border-bottom: 1px solid black;
+        }
+
+        #editCart{
+            text-decoration: none;
+            color: #0077cc;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .OrderSummaryDetails .ItemImg img{
+            width:100%;
+        }
+
+        .OrderSummaryDetails {
+            display: grid;
+            grid-template-columns: 200px 1fr auto;
+            text-align: center;
+            align-items: center;
+            width:100%;
+            padding:10px;
+            box-sizing: border-box;
+            font-size: 20px;
+            gap:20px;
+            border-bottom: 1px solid black;
+        }
+
+        .OrderSummaryDetails:nth-child(odd){
+            background-color:#F5F5F5;
+        }
+
+        .OrderSummaryDetails .ItemNameAndDate{
+            text-align:left;
+        }
+        .OrderSummaryDetails .ItemNameAndDate .droneName{
+            font-size: 24px;
+            font-weight:600;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .OrderSummaryDetails .ItemNameAndDate .duration{
+            font-size: 20px;
+            color:#555;
+        } 
+
+        .OrderSummaryDetails .ItemPrice{
+            font-size: 22px;
+            font-weight:600;
+        }
+
+        .OrderSummary{
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap:20px;
+            width:100%;
+            padding:10px;
+            box-sizing: border-box;
+            font-size: 22px;
+            border-bottom: 1px solid black;
+            overflow: auto;
+        }   
+
+        .OrderSummary .SubtotalAndShipping{
+            display:flex;
+            flex-direction: column;
+            gap:14px;
+        }
+
+        .OrderSummary .OrderSummaryPrice{
+            display:flex;
+            flex-direction: column;
+            gap:14px;
+            font-weight:600;
+        }
+        .OrderTotal {
+            display: grid;
+            grid-template-columns: 1fr auto;
+
+            width: 100%;
+            padding: 10px;
+
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .OrderTotal #totalPrice{
+            font-size: 26px;
+        } 
+
+        .PaymentMethodContainer{
+            background-color: #FFFFFF;
+            padding:10px;
+            margin-left:40px;
+            margin-right:40px;
+            margin-bottom:20px;
+        }
+        .error_Message{
+            color:#ef4444;
+            margin-bottom: 10px;
+            font-size: 20px;
+            display: none;
+        }
+
+        .PaymentMethodContainer form input{
+            display: none;
+        }
+
+        .PaymentCategory {
+            display: flex;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .PaymentCategory input[type="radio"] {
+            display: none;
+        }
+
+        .PaymentCategory label {
+            width: 140px;
+            height: 120px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border: 2px solid #ccc;
+            border-radius: 12px;
+
+            cursor: pointer;
+            transition: all 0.2s ease;
+
+            background-color: #fff;
+        }
+
+        /* hover */
+        .PaymentCategory label:hover {
+            transform: scale(1.05);
+        }
+
+        .PaymentCategory label.selected {
+            transform: scale(1.2);
+            border: 2px solid #007bff;
+            background-color: #e6f0ff;
+        }
+        .paymentContent img {
+            width: 60px;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .paymentImgName{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap:5px;
+            height:100%;
+            justify-content: center;
+            user-select: none;
+        }
+
+        .paymentImgName img{
+            width:130px;
+            height:auto;
+        }
+
+        .paymentImgName #tng{
+            width:170px;
+            margin-top: 15px;
+            margin-bottom: 20px;
+        }
+
+        .check{
+            display: none;
+            position: absolute;
+            top:-4px;
+            right:-4px;
+        }    
+        .check i{
+            font-size: 20px;
+        }
+
+        .checkOutButton{
+            display: flex;
+            justify-content: flex-end;
+            padding: 20px;
+        }
+        .checkOutButton .check-out{
+            padding:20px 40px;
+            cursor:pointer;
+            background-color: #0077cc;
+            color: white;
+            border:none;
+            border-radius: 5px;
+            font-size: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .check-out:hover{
+            background-color: #0056b3;
+        }
+
+        /* Responsive Design */
+        /* tablet/ipad design */
+        @media (max-width: 768px) {
+        .UserDetail {
+        flex-direction: column;
+        font-size: 16px;
+        gap: 10px;
+    }
+
+    .OrderSummaryDetails {
+        grid-template-columns: 1fr; 
+        text-align: left;
+    }
+
+    .OrderSummaryDetails .ItemImg img {
+        max-width: 150px;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .OrderSummaryDetails .ItemNameAndDate .droneName {
+        font-size: 18px;
+    }
+
+    .OrderSummaryDetails .ItemPrice {
+        font-size: 18px;
+        text-align: right;
+    }
+
+    #CheckOutButton {
+        width: 90%; 
+    }
+
+    .checkOutButton {
+        margin-top: 20px;
+        margin-right: -20px;
+    }
+}
+
+/* Mobile Phone Design */
+    @media (max-width: 480px) {
+    body h3 {
+        font-size: 18px;
+    }
+
+    .UserDetail {
+        font-size: 14px;
+    }
+
+    .OrderSummaryDetails {
+        font-size: 16px;
+    }
+
+    .OrderSummary .SubtotalAndShipping,
+    .OrderSummary .OrderSummaryPrice,
+    .OrderTotal {
+        font-size: 18px;
+    }
+}
+
+        
+        

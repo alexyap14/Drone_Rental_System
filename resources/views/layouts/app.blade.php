@@ -26,6 +26,8 @@
 
     {{-- Scripts --}}
     <script src="{{ asset('js/app.js') }}" defer></script>
+
+    @yield('styles')
 </head>
 <body>
     <div class="page-wrap">
