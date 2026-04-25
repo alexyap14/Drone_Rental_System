@@ -47,6 +47,8 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::put('/admin/products/{product}', [ProductController::class, 'update'])->name('products.update');
     Route::delete('/admin/products/{product}', [ProductController::class, 'destroy'])->name('products.destroy');
 });
+Route::get('/profile/setup-form', [ProfileController::class, 'showSetupForm'])->name('profile.setup.form');
+Route::post('/profile/setup-form', [ProfileController::class, 'postSetup'])->name('profile.setup.post');
 
 Route::middleware('auth')->group(function () {
     // Short profile route for header navigation
@@ -81,5 +83,4 @@ Route::post('password/email', [ForgotPasswordController::class, 'sendResetLinkEm
 Route::get('password/reset/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
 Route::post('password/reset', [ResetPasswordController::class, 'reset'])->name('password.update');
 
-Route::get('/profile/setup-form', [ProfileController::class, 'showSetupForm'])->name('profile.setup.form');
-Route::post('/profile/setup-form', [ProfileController::class, 'postSetup'])->name('profile.setup.post');
+

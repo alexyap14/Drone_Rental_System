@@ -64,7 +64,7 @@
                     </div>
                 @endif
 
-                <form class="profile-form" method="POST" action="{{ route('profile.update') }}">
+                <form class="profile-form" method="POST" action="{{ route('profile.setup.post') }}">
                     @csrf
 
                     <div class="form-group">
