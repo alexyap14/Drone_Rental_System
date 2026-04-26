@@ -14,9 +14,9 @@ class ProductController extends Controller
         $products = Product::query()
             ->when($search, function ($query, $search) {
                 return $query->where('product_name', 'like', '%' . $search . '%')
-                         ->orWhere('product_description', 'like', '%' . $search . '%');
-                })
-                ->get();
+                    ->orWhere('product_description', 'like', '%' . $search . '%');
+            })
+            ->get();
 
         return view('products.index', compact('products', 'search'));
     }
@@ -44,8 +44,10 @@ class ProductController extends Controller
         ]);
 
         if ($request->hasFile('product_image')) {
-            $imagePath = $request->file('product_image')->store('images/products', 'public');
-            $validated['product_image'] = $imagePath;
+            $file = $request->file('product_image');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $file->move(public_path('photo'), $filename);
+            $validated['product_image'] = 'photo/' . $filename;
         }
 
         Product::create($validated);
@@ -71,8 +73,10 @@ class ProductController extends Controller
         ]);
 
         if ($request->hasFile('product_image')) {
-            $imagePath = $request->file('product_image')->store('images/products', 'public');
-            $validated['product_image'] = $imagePath;
+            $file = $request->file('product_image');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $file->move(public_path('photo'), $filename);
+            $validated['product_image'] = 'photo/' . $filename;
         }
 
         $product->update($validated);
@@ -88,4 +92,3 @@ class ProductController extends Controller
         return redirect()->route('products.index')->with('success', 'Product deleted successfully!');
     }
 }
- 

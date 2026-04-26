@@ -33,19 +33,19 @@
                 <h3>Additional Details</h3>
                 <div class="form-row">
                     <label>Gender</label>
-                    <p>{{ $profileDetail->gender ?? '—' }}</p>
+                    <p>{{ $user->profileDetail->gender ?? '—' }}</p>
                 </div>
                 <div class="form-row">
                     <label>Race</label>
-                    <p>{{ $profileDetail->race ?? '—' }}</p>
+                    <p>{{ $user->profileDetail->race ?? '—' }}</p>
                 </div>
                 <div class="form-row">
                     <label>Religion</label>
-                    <p>{{ $profileDetail->religion ?? '—' }}</p>
+                    <p>{{ $user->profileDetail->religion ?? '—' }}</p>
                 </div>
                 <div class="form-row">
                     <label>Date of Birth</label>
-                    <p>{{ $profileDetail->dob ?? '—' }}</p>
+                    <p>{{ $user->profileDetail->date_of_birth ?? '—' }}</p>
                 </div>
                 @can('update-profile', $user)
                 <div class="form-actions">

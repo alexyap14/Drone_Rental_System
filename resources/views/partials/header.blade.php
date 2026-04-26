@@ -9,8 +9,8 @@
     if ($user_id) {
         try {
             $cart_count = \Illuminate\Support\Facades\DB::table('cart_items')
-                ->join('cart', 'cart_items.cart_id', '=', 'cart.cart_id')
-                ->where('cart.user_id', $user_id)
+                ->join('carts', 'cart_items.cart_id', '=', 'carts.id')
+                ->where('carts.user_id', $user_id)
                 ->count();
         } catch (\Exception $e) {
             $cart_count = 0;

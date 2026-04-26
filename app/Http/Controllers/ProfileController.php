@@ -53,6 +53,7 @@ class ProfileController extends Controller
     // ========== PROFILE VIEWING / EDITING (Existing users) ==========
     public function show(User $user)
     {
+        $user->load('profileDetail');
         // Authorization: only owner or admin
         if (Gate::denies('view-profile', $user)) {
             abort(403, 'Unauthorized');
@@ -103,10 +104,13 @@ class ProfileController extends Controller
         ProfileDetail::updateOrCreate(
             ['user_id' => $user->id],
             [
+                'full_name' => $validated['name'],         
+                'phone' => $validated['phone_number'], 
+                'address' => $validated['address'],
                 'gender' => $validated['gender'] ?? null,
                 'race' => $validated['race'] ?? null,
                 'religion' => $validated['religion'] ?? null,
-                'dob' => $validated['dob'] ?? null,
+                'date_of_birth' => $validated['dob'] ?? null,
             ]
         );
 
@@ -133,7 +137,7 @@ class ProfileController extends Controller
             'gender' => 'nullable|string|max:50',
             'race' => 'nullable|string|max:50',
             'religion' => 'nullable|string|max:50',
-            'dob' => 'nullable|date',
+            'date_of_birth' => 'nullable|date',
         ]);
 
         ProfileDetail::create([
@@ -141,7 +145,7 @@ class ProfileController extends Controller
             'gender' => $validated['gender'] ?? null,
             'race' => $validated['race'] ?? null,
             'religion' => $validated['religion'] ?? null,
-            'dob' => $validated['dob'] ?? null,
+            'date_of_birth' => $validated['date_of_birth'] ?? null,
         ]);
 
         return redirect()->route('home')->with('success', 'Profile details saved!');

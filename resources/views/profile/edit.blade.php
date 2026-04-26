@@ -59,28 +59,28 @@
                         <label for="gender">Gender</label>
                         <select id="gender" name="gender">
                             <option value="">— Select —</option>
-                            <option value="Male"   {{ old('gender', $profileDetail->gender ?? '') == 'Male' ? 'selected' : '' }}>Male</option>
-                            <option value="Female" {{ old('gender', $profileDetail->gender ?? '') == 'Female' ? 'selected' : '' }}>Female</option>
-                            <option value="Other"  {{ old('gender', $profileDetail->gender ?? '') == 'Other' ? 'selected' : '' }}>Other</option>
+                            <option value="Male"   {{ old('gender', $user->profileDetail->gender ?? '') == 'Male' ? 'selected' : '' }}>Male</option>
+                            <option value="Female" {{ old('gender', $user->profileDetail->gender ?? '') == 'Female' ? 'selected' : '' }}>Female</option>
+                            <option value="Other"  {{ old('gender', $user->profileDetail->gender ?? '') == 'Other' ? 'selected' : '' }}>Other</option>
                         </select>
                     </div>
 
                     <div class="form-row">
                         <label for="race">Race</label>
                         <input type="text" id="race" name="race"
-                               value="{{ old('race', $profileDetail->race ?? '') }}">
+                               value="{{ old('race', $user->profileDetail->race ?? '') }}">
                     </div>
 
                     <div class="form-row">
                         <label for="religion">Religion</label>
                         <input type="text" id="religion" name="religion"
-                               value="{{ old('religion', $profileDetail->religion ?? '') }}">
+                               value="{{ old('religion', $user->profileDetail->religion ?? '') }}">
                     </div>
 
                     <div class="form-row">
                         <label for="dob">Date of Birth</label>
                         <input type="date" id="dob" name="dob"
-                               value="{{ old('dob', $profileDetail->dob ?? '') }}">
+                               value="{{ old('dob', $user->profileDetail->date_of_birth ?? '') }}">
                         @error('dob') <small class="err">{{ $message }}</small> @enderror
                     </div>
                 </div>

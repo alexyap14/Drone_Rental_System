@@ -12,7 +12,6 @@ class ContactMessage extends Model
     protected $table = 'contact_messages';
 
     // Disable timestamps because the table has no updated_at column
-    public $timestamps = false;
 
     protected $fillable = [
         'name',

@@ -10,22 +10,23 @@ class ProfileDetail extends Model
     use HasFactory;
 
     protected $table = 'profile_details';
-
-    // Because the primary key is 'user_id', not 'id'
     protected $primaryKey = 'user_id';
-
-    // The table does not have an auto-incrementing primary key
     public $incrementing = false;
-
-    // No created_at / updated_at in the table
-    public $timestamps = false;
 
     protected $fillable = [
         'user_id',
+        'full_name',
+        'phone',
+        'address',
         'gender',
         'race',
         'religion',
-        'dob',
+        'date_of_birth',
+    ];
+
+    protected $attributes = [
+        'full_name' => '',
+        'phone' => '',  
     ];
 
     public function user()
