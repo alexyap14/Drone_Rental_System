@@ -34,6 +34,10 @@
   gap:12px
 }
 
+.dfy-user-menu {
+  position: relative;
+}
+
 .dfy-user{
   display:inline-flex;
   align-items:center;
@@ -41,8 +45,10 @@
   padding:6px 10px;
   border:1px solid #ddd;
   border-radius:999px;
-  text-decoration:none;
-  color:#333
+  background:#fff;
+  color:#333;
+  cursor:pointer;
+  font:inherit
 }
 
 .dfy-user:hover{
@@ -57,6 +63,57 @@
   display:inline-block
 }
 
+.dfy-dropdown-arrow {
+  font-size:12px;
+  transition:transform 0.2s ease
+}
+
+.dfy-user[aria-expanded="true"] .dfy-dropdown-arrow {
+  transform:rotate(180deg)
+}
+
+.dfy-user-dropdown {
+  display:none;
+  position:absolute;
+  top:calc(100% + 8px);
+  right:0;
+  min-width:170px;
+  padding:6px;
+  background:#fff;
+  border:1px solid #ddd;
+  border-radius:8px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.15);
+  z-index:1000
+}
+
+.dfy-user-dropdown.open {
+  display:block
+}
+
+.dfy-user-dropdown a,
+.dfy-user-dropdown button {
+  display:block;
+  width:100%;
+  padding:10px 12px;
+  border:0;
+  border-radius:6px;
+  background:transparent;
+  color:#333;
+  text-align:left;
+  text-decoration:none;
+  cursor:pointer;
+  font:inherit
+}
+
+.dfy-user-dropdown a:hover,
+.dfy-user-dropdown button:hover {
+  background:#f3f3f3
+}
+
+.dfy-user-dropdown form {
+  margin:0
+}
+
 .dfy-login{
   padding:6px 10px;
   border:1px solid #ddd;
@@ -64,7 +121,6 @@
   text-decoration:none;
   color:#333
 }
-
 
 .dfy-login:hover{
   background:#f6f6f6
@@ -119,6 +175,7 @@
   align-items: center;
   justify-content: center;
 }
+
 /* Mobile */
 @media(max-width:768px){
   .dfy-brand img {
@@ -142,7 +199,6 @@
     top: -4px;
     right: -4px;
   }
-
 
   .dfy-menu-btn{
     display:inline-block
