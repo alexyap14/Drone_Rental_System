@@ -136,17 +136,6 @@ resources/views/     Blade templates
 routes/web.php       Web routes
 ```
 
-## Notes
-
-- This repository is intended for learning and demonstration purposes.
-- Do not commit a real `.env` file or production credentials.
-- Configure mail-related environment variables if you want contact-form emails and password-reset emails to work.
-- Replace all development credentials before using the application outside a local environment.
-
 ## Contributors
 
 Developed as a four-person team project led by Yap Wen Qing.
-
-## License
-
-This project is built with the Laravel framework, which is licensed under the [MIT License](https://opensource.org/licenses/MIT).
