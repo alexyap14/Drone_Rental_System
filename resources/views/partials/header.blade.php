@@ -35,10 +35,27 @@
       </div>
 
       @if ($is_logged_in)
-        <a class="dfy-user" href="{{ route('profile.show', $user_id) }}" title="Profile">
-          <span class="dfy-avatar" aria-hidden="true"></span>
-          <span class="dfy-username">{{ $full_name ?? ('User #'.$user_id) }}</span>
-        </a>
+        <div class="dfy-user-menu">
+          <button
+            class="dfy-user"
+            type="button"
+            aria-expanded="false"
+            aria-controls="dfy-user-dropdown"
+            onclick="toggleUserMenu(event, this)"
+          >
+            <span class="dfy-avatar" aria-hidden="true"></span>
+            <span class="dfy-username">{{ $full_name ?? ('User #'.$user_id) }}</span>
+            <span class="dfy-dropdown-arrow" aria-hidden="true">▾</span>
+          </button>
+
+          <div id="dfy-user-dropdown" class="dfy-user-dropdown">
+            <a href="{{ route('profile.show', $user_id) }}">User Profile</a>
+            <form action="{{ route('logout') }}" method="POST">
+              @csrf
+              <button type="submit">Log Out</button>
+            </form>
+          </div>
+        </div>
       @else
         <a class="dfy-login" href="{{ route('login') }}">Log In</a>
       @endif
@@ -55,10 +72,6 @@
     <a href="{{ route('contact.form') }}">Contact Us</a>
     @if ($is_logged_in)
       <a href="{{ route('purchase.history') }}">History</a>
-      <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Log Out</a>
-      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-        @csrf
-      </form>
     @endif
   </nav>
 </header>
@@ -75,4 +88,32 @@
         }
         return true;
     }
+
+    function toggleUserMenu(event, button) {
+        event.stopPropagation();
+
+        const dropdown = document.getElementById('dfy-user-dropdown');
+        const isOpen = dropdown.classList.toggle('open');
+
+        button.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    }
+
+    document.addEventListener('click', function () {
+        const dropdown = document.getElementById('dfy-user-dropdown');
+        const button = document.querySelector('.dfy-user');
+
+        if (dropdown) {
+            dropdown.classList.remove('open');
+        }
+
+        if (button) {
+            button.setAttribute('aria-expanded', 'false');
+        }
+    });
+
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
+            document.dispatchEvent(new Event('click'));
+        }
+    });
 </script>
